@@ -445,6 +445,28 @@ class Stage extends MusicBeatState
 						add(waveSpriteFG);
 					 */
 				}
+			case 'day':
+				{
+					camZoom = 0.9;
+					curStage = 'day';
+					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('dayback'));
+					bg.antialiasing = FlxG.save.data.antialiasing;
+					bg.scrollFactor.set(0.9, 0.9);
+					bg.active = false;
+					swagBacks['bg'] = bg;
+					toAdd.push(bg);
+				}
+			case 'night':
+				{
+					camZoom = 0.9;
+					curStage = 'night';
+					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('nightback'));
+					bg.antialiasing = FlxG.save.data.antialiasing;
+					bg.scrollFactor.set(0.9, 0.9);
+					bg.active = false;
+					swagBacks['bg'] = bg;
+					toAdd.push(bg);
+				}
 			default:
 				{
 					camZoom = 0.9;
