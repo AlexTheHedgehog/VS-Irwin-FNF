@@ -16,9 +16,8 @@ class MenuItem extends FlxSpriteGroup
 	public function new(x:Float, y:Float, weekNum:Int = 0)
 	{
 		super(x, y);
-		week = new FlxSprite().loadGraphic(Paths.image('storymenu/week' + WeekData.getWeekNumber(weekNum)));
-		//trace('Test added: ' + WeekData.getWeekNumber(weekNum) + ' (' + weekNum + ')');
-		week.antialiasing = ClientPrefs.globalAntialiasing;
+		week = new FlxSprite().loadGraphic(Paths.image('storymenu/week' + weekNum));
+		week.antialiasing = FlxG.save.data.antialiasing;
 		add(week);
 	}
 
@@ -38,14 +37,14 @@ class MenuItem extends FlxSpriteGroup
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		y = FlxMath.lerp(y, (targetY * 120) + 480, CoolUtil.boundTo(elapsed * 10.2, 0, 1));
+		y = FlxMath.lerp(y, (targetY * 120) + 480, 0.17 * (60 / FlxG.save.data.fpsCap));
 
 		if (isFlashing)
 			flashingInt += 1;
-
+	
 		if (flashingInt % fakeFramerate >= Math.floor(fakeFramerate / 2))
 			week.color = 0xFF33ffff;
-		else
+		else if (FlxG.save.data.flashing)
 			week.color = FlxColor.WHITE;
 	}
 }
