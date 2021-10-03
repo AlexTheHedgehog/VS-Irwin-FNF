@@ -423,11 +423,11 @@ class Character extends FlxSprite
 			case 'irvinmajin':
 				tex = Paths.getSparrowAtlas('IrvinMajin','shared',true);
 				frames = tex;
-				animation.addByPrefix('idle', 'Irvin Idle', 24, false);
-				animation.addByPrefix('singUP', 'Irvin Up Note', 24, false);
-				animation.addByPrefix('singRIGHT', 'Irvin Right Note', 24, false);
-				animation.addByPrefix('singDOWN', 'Irvin Down Note', 24, false);
-				animation.addByPrefix('singLEFT', 'Irvin Left Note', 24, false);
+				animation.addByPrefix('idle', 'Idle', 24, false);
+				animation.addByPrefix('singUP', 'Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Left', 24, false);
 
 				loadOffsetFile(curCharacter);
 				barColor = 0xFFaf66ce;

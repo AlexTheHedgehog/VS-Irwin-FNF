@@ -645,6 +645,12 @@ class PlayState extends MusicBeatState
 			case 'irvin':
 				camPos.x += 400;
 				dad.y += 300;
+			case 'irvinmajin':
+				camPos.x += 400;
+				dad.y += 300;
+			case 'irvinsugon':
+				camPos.x += 400;
+				dad.y += 300;
 		}
 
 		if (loadRep)
